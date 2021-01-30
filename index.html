@@ -27,7 +27,7 @@
     </header>
 
     <!--Booking Section-->
-    <main class="main-content container">
+    <main id="boking-section" class="main-content container">
         <div class="booking-form">
             <h3>Booking Flights</h3>
             <div class="input-group">
@@ -51,20 +51,26 @@
             <div class="input-group f-class">
                 <div>
                     <label for="">First Class ($150)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <input id="inputClass-ticket" class="inp-style inp-width" value="0" type="number" name="">
                 </div>
-                <div class="plus-minus-btn">
-                    <p>+ -</p>
+                   <div onclick=" ticketSelect(true)" class="plus-minus-btn">
+                    <p>+ </p>
+                </div>
+                <div onclick=" ticketSelect(false)" class="plus-minus-btn">
+                    <p>- </p>
                 </div>
             </div>
             
             <div class="input-group f-class">
                 <div>
                     <label for="">Economy ($100)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <input id="inputEconomy-ticket" class="inp-style inp-width" value="0" type="number" name="">
                 </div>
-                <div class="plus-minus-btn">
-                    <p> <span>+</span> <span>-</span> </p>
+                <div onclick=" ticketSelectClass(true)" class="plus-minus-btn">
+                    <p> <span>+</span></p>
+                </div>
+                <div onclick=" ticketSelectClass(false)" class="plus-minus-btn">
+                    <p><span>-</span> </p>
                 </div>
             </div>
             <div class="calculations">
@@ -73,7 +79,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p>$500</p>
+                        <p>$<span id="sub-total">00</span></p>
                     </div>
                 </div>
 
@@ -82,7 +88,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p>$50</p>
+                        <p>$<span id="totalTax">00</span></p>
                     </div>
                 </div>
                 <hr>
@@ -91,20 +97,72 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$550</p>
+                        <p>$<span id="total-price">00</span></p>
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="book-now" class="btn-style">Book Now</button>
         </div>
-
+          
         <div class="booking-content">
             <h1>discover <br> around the world</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise voluptatibus quam</p>
         </div>
     </section>
+         
+   <section id="account-panel">
+       <div>
+           <h2>your terminet is sucsesfully</h2>
+       </div>
+   </section>
+    <!--Start javaScript -->
+     <script>
+        function ticketSelectClass(ticketCount){
+         const inputClassTicket =  document.getElementById('inputEconomy-ticket');
+         const inputclassTicketCoutn = parseInt(inputClassTicket.value);
+         let  totalInputTicket = inputclassTicketCoutn;
+            if(ticketCount == true){
+                totalInputTicket = inputclassTicketCoutn + 1;
+            }
+            if(ticketCount == false && inputclassTicketCoutn > 0){
+                totalInputTicket = inputclassTicketCoutn - 1;  
+            }
+              inputClassTicket.value = totalInputTicket;   
+              const subTotalAmountEconomy = totalInputTicket * 100 ;
+             const subTotalAmountNumber = document.getElementById('sub-total').innerText = subTotalAmountEconomy;
+             const totalTax = 0.1 * subTotalAmountEconomy ;
+             document.getElementById('totalTax').innerText = totalTax;
+             const totalAmount = subTotalAmountEconomy + totalTax ;
+             document.getElementById('total-price').innerText = totalAmount ;
+             
+             document.getElementById('inputClass-ticket').value = 0; 
+              
+           }
+             function ticketSelect(ticketCount){
+             const inputClassTicket =  document.getElementById('inputClass-ticket');
+             const inputclassTicketCoutn = parseInt(inputClassTicket.value);
+            let  totalInputTicket = inputclassTicketCoutn;
+            if(ticketCount == true){
+                totalInputTicket = inputclassTicketCoutn + 1;
+            }
+            if(ticketCount == false && inputclassTicketCoutn > 0){
+                totalInputTicket = inputclassTicketCoutn - 1;  
+            }
+              inputClassTicket.value = totalInputTicket; 
+              const subTotalAmount = totalInputTicket * 150 ;  
+              const subTotalAmountNumber = document.getElementById('sub-total').innerText = subTotalAmount; 
+              const totalTax = 0.1 * subTotalAmount; 
+             document.getElementById('totalTax').innerText = totalTax;
+             const totalAmount = subTotalAmount + totalTax ;
+             document.getElementById('total-price').innerText = totalAmount ;
+              document.getElementById('inputEconomy-ticket').value = 0;
+           }
+            document.getElementById('book-now').addEventListener('click',function(){
+            alert("Your Ticket Booking Is Successfull");
+                          
+            })
 
-    <!--Thank You-->
+     </script>
 </body>
 
 </html>
