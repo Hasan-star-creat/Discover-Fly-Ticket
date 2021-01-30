@@ -120,8 +120,4 @@ nav ul li a:hover, a.active{
     display: flex;
     justify-content: space-between;
 }
- #account-panel{
-     display:none;
-     text-align: center;
-     color: #F3F5FF;
- }
+
