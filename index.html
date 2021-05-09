@@ -11,6 +11,8 @@
         rel="stylesheet">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+   <!-- script  -->
+    <script src="App1.js"></script>
 </head>
 
 <body>
@@ -50,26 +52,26 @@
             </div>
             <div class="input-group f-class">
                 <div>
-                    <label for="">First Class ($150)</label>
-                    <input id="inputClass-ticket" class="inp-style inp-width" value="0" type="number" name="">
+                    <label for="">First Class ($<span id="first-class-price">150</span>): <span id="first-class-total"></span></label>
+                    <input id="first-class-qty" class="inp-style inp-width" value="0" type="number" name="">
                 </div>
-                   <div onclick=" ticketSelect(true)" class="plus-minus-btn">
+                   <div onclick=" ticketSelect('first-class',true)" class="plus-minus-btn">
                     <p>+ </p>
                 </div>
-                <div onclick=" ticketSelect(false)" class="plus-minus-btn">
+                <div onclick=" ticketSelect('first-class',false)" class="plus-minus-btn">
                     <p>- </p>
                 </div>
             </div>
             
             <div class="input-group f-class">
                 <div>
-                    <label for="">Economy ($100)</label>
-                    <input id="inputEconomy-ticket" class="inp-style inp-width" value="0" type="number" name="">
+                    <label for="">Economy ($ <span id="second-class-price">100</span>): <span id="second-class-total"></span></label>
+                    <input id="second-class-qty" class="inp-style inp-width" value="0" type="number" name="">
                 </div>
-                <div onclick=" ticketSelectClass(true)" class="plus-minus-btn">
+                <div onclick="ticketSelect('second-class',true)" class="plus-minus-btn">
                     <p> <span>+</span></p>
                 </div>
-                <div onclick=" ticketSelectClass(false)" class="plus-minus-btn">
+                <div onclick="ticketSelect('second-class',false)" class="plus-minus-btn">
                     <p><span>-</span> </p>
                 </div>
             </div>
@@ -111,53 +113,7 @@
     </section>
          
     <!--Start javaScript -->
-     <script>
-        function ticketSelectClass(ticketCount){
-         const inputClassTicket =  document.getElementById('inputEconomy-ticket');
-         const inputclassTicketCoutn = parseInt(inputClassTicket.value);
-         let  totalInputTicket = inputclassTicketCoutn;
-            if(ticketCount == true){
-                totalInputTicket = inputclassTicketCoutn + 1;
-            }
-            if(ticketCount == false && inputclassTicketCoutn > 0){
-                totalInputTicket = inputclassTicketCoutn - 1;  
-            }
-              inputClassTicket.value = totalInputTicket;   
-              const subTotalAmountEconomy = totalInputTicket * 100 ;
-             const subTotalAmountNumber = document.getElementById('sub-total').innerText = subTotalAmountEconomy;
-             const totalTax = 0.1 * subTotalAmountEconomy ;
-             document.getElementById('totalTax').innerText = totalTax;
-             const totalAmount = subTotalAmountEconomy + totalTax ;
-             document.getElementById('total-price').innerText = totalAmount ;
-             
-             document.getElementById('inputClass-ticket').value = 0; 
-              
-           }
-             function ticketSelect(ticketCount){
-             const inputClassTicket =  document.getElementById('inputClass-ticket');
-             const inputclassTicketCoutn = parseInt(inputClassTicket.value);
-            let  totalInputTicket = inputclassTicketCoutn;
-            if(ticketCount == true){
-                totalInputTicket = inputclassTicketCoutn + 1;
-            }
-            if(ticketCount == false && inputclassTicketCoutn > 0){
-                totalInputTicket = inputclassTicketCoutn - 1;  
-            }
-              inputClassTicket.value = totalInputTicket; 
-              const subTotalAmount = totalInputTicket * 150 ;  
-              const subTotalAmountNumber = document.getElementById('sub-total').innerText = subTotalAmount; 
-              const totalTax = 0.1 * subTotalAmount; 
-             document.getElementById('totalTax').innerText = totalTax;
-             const totalAmount = subTotalAmount + totalTax ;
-             document.getElementById('total-price').innerText = totalAmount ;
-              document.getElementById('inputEconomy-ticket').value = 0;
-           }
-            document.getElementById('book-now').addEventListener('click',function(){
-            alert("are you sure boking this ticket");
-                          
-            })
-
-     </script>
+       
 </body>
 
 </html>
