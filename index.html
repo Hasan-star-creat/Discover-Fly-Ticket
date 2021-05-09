@@ -55,11 +55,15 @@
                     <label for="">First Class ($<span id="first-class-price">150</span>) :$<span id="first-class-total">00</span></label>
                     <input id="first-class-qty" class="inp-style inp-width" value="0" type="number" name="">
                 </div>
-                   <div onclick=" ticketSelect('first-class',true)" class="plus-minus-btn">
-                    <p class="click-btn">+</p>
+                   <div> 
+                      <button onclick=" ticketSelect('first-class',true)" class="plus-minus-btn">
+                        <span class="click-btn">+</span>
+                      </button> 
                 </div>
-                <div onclick=" ticketSelect('first-class',false)" class="plus-minus-btn">
-                    <p class="click-btn">-</p>
+                <div> 
+                    <button onclick=" ticketSelect('first-class',false)" class="plus-minus-btn">
+                    <span class="click-btn">-</span>
+                    </button>
                 </div>
             </div>
             
@@ -68,11 +72,16 @@
                     <label for="">Economy ($ <span id="second-class-price">100</span>) :$<span id="second-class-total">00</span></label>
                     <input id="second-class-qty" class="inp-style inp-width" value="0" type="number" name="">
                 </div>
-                <div onclick="ticketSelect('second-class',true)" class="plus-minus-btn">
-                    <p> <span class="click-btn">+</span></p>
+                <div>
+                    <button onclick="ticketSelect('second-class',true)" class="plus-minus-btn">
+                       <p><span class="click-btn">+</span><p>  
+                    </button> 
                 </div>
-                <div onclick="ticketSelect('second-class',false)" class="plus-minus-btn">
-                    <p><span class="click-btn">-</span> </p>
+
+                <div>
+                     <button onclick="ticketSelect('second-class',false)" class="plus-minus-btn">
+                        <p><span class="click-btn">-</span> </p>
+                     </button>
                 </div>
             </div>
             <div class="calculations">
