@@ -30,7 +30,7 @@
 
     <!--Booking Section-->
     <main id="boking-section" class="main-content container">
-        <div class="booking-form">
+        <div class="booking-form" id="booking-form">
             <h3>Booking Flights</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
@@ -56,10 +56,10 @@
                     <input id="first-class-qty" class="inp-style inp-width" value="0" type="number" name="">
                 </div>
                    <div onclick=" ticketSelect('first-class',true)" class="plus-minus-btn">
-                    <p>+ </p>
+                    <p class="click-btn">+</p>
                 </div>
                 <div onclick=" ticketSelect('first-class',false)" class="plus-minus-btn">
-                    <p>- </p>
+                    <p class="click-btn">-</p>
                 </div>
             </div>
             
@@ -69,10 +69,10 @@
                     <input id="second-class-qty" class="inp-style inp-width" value="0" type="number" name="">
                 </div>
                 <div onclick="ticketSelect('second-class',true)" class="plus-minus-btn">
-                    <p> <span>+</span></p>
+                    <p> <span class="click-btn">+</span></p>
                 </div>
                 <div onclick="ticketSelect('second-class',false)" class="plus-minus-btn">
-                    <p><span>-</span> </p>
+                    <p><span class="click-btn">-</span> </p>
                 </div>
             </div>
             <div class="calculations">
@@ -103,7 +103,7 @@
                     </div>
                 </div>
             </div>
-            <button id="book-now" class="btn-style">Book Now</button>
+            <button onclick="confirmButton()" id="book-now" class="btn-style">Book Now</button>
         </div>
           
         <div class="booking-content">
@@ -112,7 +112,31 @@
         </div>
     </section>
          
-    <!--Start javaScript -->
+    <!--Booking Part  -->
+       
+    <div class="booking-confirm" id="booking-confirm">
+         <div class="header-confirm">
+           <h2>DISCOVER AROUND</h2>
+           <h4>confirmation</h4>
+         </div>
+         <div class="chack-text">
+             <img  src="images/check.svg" alt="">
+             <h2>Thank you for your Booking</h2>
+             <p>Lorem ipsum dolor sit amet consectetur.</p>
+         </div>
+        
+         <div class="confirm-details">
+            <h4 id="confirm-date">Date: </h4>
+            <h4 id="first-sits"> </h4> 
+            <h4 id="economy-sits"> </h4>
+            <h4 id="confirm-total"> </h4>
+            <img width="150px" src="images/thank.jpg" alt="">
+        </div>
+
+        <button onclick="backButton()" class="back-button mt-3" id="back-button">Back</button>
+
+    </div>
+
        
 </body>
 

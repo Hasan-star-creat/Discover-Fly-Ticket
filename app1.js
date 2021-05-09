@@ -44,7 +44,7 @@ function getQuantity(id){
      
     }
 
-    // sub total 
+    // sub total value 
    function  updateSubTotal(){
       const first = document.getElementById('first-class-total').innerText;
       const second = document.getElementById('second-class-total').innerText;
@@ -60,4 +60,34 @@ function getQuantity(id){
     totalPrice.innerText = (tax + parseFloat(subTotal)).toFixed(2);
 
    }
+
+   // confirmation booking part 
+     function confirmButton(){
+     const total =  document.getElementById('total-price').innerText;
+     ticketChack = parseInt(total);
+     if(ticketChack){
+       document.getElementById('booking-form').style.display = "none ";
+      document.getElementById('booking-confirm').style.display = "block";
+      // first site 
+       const first =  document.getElementById('first-class-qty').value;
+      const firstSits = document.getElementById('first-sits');
+       firstSits.innerText = `First class Sits:` + ` ` +  first;
+         // economy class sites 
+          const economy = document.getElementById("second-class-qty").value;
+          const economySites = document.getElementById('economy-sits');
+          economySites.innerText = `Economy class Sits:` + ` ` + economy;
+           
+        // total amount 
+      document.getElementById('confirm-total').innerText = `Total price with 10% VAT: $` + ` ` + ticketChack;
+          
+     }else{
+      alert("Hello! You didn't buy a ticket!!");
+     }
+       
+     }
      
+     // Back button 
+     function backButton(){ 
+       document.getElementById("booking-confirm").style.display = "none";
+       document.getElementById("booking-form").style.display = "block";
+     }

@@ -122,3 +122,66 @@ nav ul li a:hover, a.active{
     justify-content: space-between;
 }
 
+.booking-confirm{
+    background-color: #fff;
+	border-radius: 15px;
+	float: left;
+	width: 65%;
+ 	margin-left: 180px;
+    display: none;
+    margin-bottom: 20px;
+}
+.header-confirm {
+	background-color: tomato;
+	border-radius: 5px;
+	text-transform: uppercase;
+	font-family: "Bebas Neue", cursive;
+	color: rgb(44, 42, 42);
+	text-align: center;
+    margin-bottom: 20px;
+    
+}
+.chack-text{
+    text-align: center;
+    
+}
+.chack-text img{
+    width: 150px;
+}
+.confirm-details{
+    background-color: lightblue;
+    margin-top: 30px;
+	padding: 10px;
+    line-height: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.confirm-details h4{
+    text-align: left;
+}
+.header-confirm h4{
+	font-family: "Roboto", sans-serif;
+	color: rgb(253, 253, 253);
+}
+.back-button{
+    background-color: tomato;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 20px;
+     padding:20px;
+     margin-left: 40%;
+     margin-bottom: 10px;
+    border: none;
+}
+
+/* puse minus button  */
+ .click-btn{
+     background-color: #F3F5FF;
+     padding: 5px;
+     border-radius: 2px;
+ }
+ .click-btn:hover{
+     background-color: #E33741;
+     border-radius: 3px;
+ }
+
