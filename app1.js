@@ -91,3 +91,5 @@ function getQuantity(id){
        document.getElementById("booking-confirm").style.display = "none";
        document.getElementById("booking-form").style.display = "block";
      }
+
+      // Thanks 
